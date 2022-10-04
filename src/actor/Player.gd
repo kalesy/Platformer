@@ -1,6 +1,7 @@
 extends Actor
 
 export var stomp_impulse = 1000.0
+signal player_dead
 
 func _physics_process(delta: float) -> void:
 	#Input.get_action_strength this function returns the float result of the action move occurs
@@ -41,4 +42,4 @@ func _on_EnemyDetector_area_entered(_area:Area2D):
 
 func _on_EnemyDetector_body_entered(_body:Node):
 	print("You died!")
-	queue_free()
+	emit_signal("player_dead")
