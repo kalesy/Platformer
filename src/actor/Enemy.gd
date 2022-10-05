@@ -1,5 +1,7 @@
 extends Actor
 
+export var score : int = 100
+
 func _ready():
 	self.velocity.x = -speed.x
 
@@ -15,3 +17,5 @@ func _on_StompDetector_body_entered(body:Node):
 	queue_free()
 	#$CollisionShape2D.disabled = true
 	
+func die():
+	PlayerData.score += score

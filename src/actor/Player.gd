@@ -41,5 +41,8 @@ func _on_EnemyDetector_area_entered(_area:Area2D):
 
 
 func _on_EnemyDetector_body_entered(_body:Node):
-	print("You died!")
+	self.die()
+
+func die():
+	PlayerData.death += 1
 	emit_signal("player_dead")
