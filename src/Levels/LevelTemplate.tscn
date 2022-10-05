@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://resources/tileset.png" type="Texture" id=1]
 [ext_resource path="res://src/actor/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://resources/background.png" type="Texture" id=4]
 [ext_resource path="res://src/Levels/GameManager.gd" type="Script" id=5]
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Levels/Level1.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -64,11 +66,14 @@ position = Vector2( 807, 125 )
 [node name="Enemy2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2272, 293 )
 
+[node name="Enemy4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1368, 112 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1864, 424 )
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 183, 127 )
-
-[node name="Camera2D" parent="Player" index="2"]
-limit_right = 2626
 
 [node name="Coin" parent="." instance=ExtResource( 6 )]
 position = Vector2( 472, 472 )
@@ -82,4 +87,6 @@ position = Vector2( 1048, 344 )
 [node name="Coin4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1128, 344 )
 
-[editable path="Player"]
+[node name="Portal2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2088, 824 )
+nextScene = ExtResource( 8 )
