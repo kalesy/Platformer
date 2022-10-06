@@ -14,8 +14,9 @@ func _physics_process(delta):
 func _on_StompDetector_body_entered(body:Node):
 	if body.global_position.y > $StompDetector.global_position.y:
 		return
+	die()
 	queue_free()
 	#$CollisionShape2D.disabled = true
 	
 func die():
-	PlayerData.score += score
+	PlayerData.score += self.score
