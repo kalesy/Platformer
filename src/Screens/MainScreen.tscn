@@ -37,6 +37,8 @@ margin_bottom = 65.0
 [node name="Play" parent="Menu" instance=ExtResource( 2 )]
 margin_right = 276.0
 margin_bottom = 63.0
+text = "Main Screen"
+next_scene_path = "res://src/Screens/MainScreen.tscn"
 
 [node name="Quit" parent="Menu" instance=ExtResource( 3 )]
 margin_top = 67.0
